@@ -8,9 +8,9 @@ To add to spring-boot project:<br>
 			<version>0-SNAPSHOT</version>
 		</dependency>
 2. Specify kafka server in application.yaml:<br>
-    kafka-msg-wrapper:
-      producer:
-        url: localhost:9092
+    kafka-msg-wrapper:<br>
+      producer:<br>
+        url: localhost:9092<br>
    
 3. Inject MsgWrapperProducer where you need send msgs.<br>
     @Autowired
