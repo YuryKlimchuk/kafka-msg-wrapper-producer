@@ -1,4 +1,4 @@
-It is spring-boot-started that provide new layer of abstraction around standart spring-kafka liblary for sending msgs to kafka.
+It is spring-boot-starter that provide new layer of abstraction around standart spring-kafka liblary for sending msgs to kafka.
 
 To add to spring-boot project:
 1. Add to pom
