@@ -1,0 +1,32 @@
+It is spring-boot-started that provide new layer of abstraction around standart spring-kafka liblary for sending msgs to kafka.
+
+To add to spring-boot project:
+1. Add to pom
+		<dependency>
+			<groupId>com.hydroyura.springboot.kafka.msg.wrapper</groupId>
+			<artifactId>producer-starter</artifactId>
+			<version>0-SNAPSHOT</version>
+		</dependency>
+2. Specify kafka server in application.yaml:
+    kafka-msg-wrapper:
+      producer:
+        url: localhost:9092
+   
+3. Inject MsgWrapperProducer where you need send msgs.
+    @Autowired
+    private MsgWrapperProducer producer;
+
+4. Use sendEvent(String topic, Object msg, String eventType) for sending msg
+   topic - topic name in kafka
+   msg - any object what you want to send
+   eventType - any label for grouping msgs
+
+ 
+This wraper creates put your msg in special container:
+  
+  public class MsgContainer {
+    private Object body;
+    private String type, className;
+  }
+
+  It allows standartize msg handaling on consumer side.
